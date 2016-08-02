@@ -1,20 +1,13 @@
-FROM ubuntu:trusty
+FROM ubuntu:16.04
 
 MAINTAINER PhenoMeNal-H2020 Project <phenomenal-h2020-users@googlegroups.com>
 
 LABEL Description="nmrglue is a module for working with NMR data in Python."
 
 
-
-# Update & upgrade sources
-RUN apt-get -y update
-RUN apt-get -y dist-upgrade
-
-# Install dependencies
-RUN apt-get -y install python2.7 python-pip git wget
-
-# Clean up
-RUN apt-get -y clean && apt-get -y autoremove && rm -rf /var/lib/{cache,log}/ /var/cache/oracle-jdk7-installer /tmp/* /var/tmp/*
+# Update, Install dependencies, Clean up
+RUN apt-get -y update && apt-get -y install python2.7 python-pip git wget && \
+    apt-get -y clean && apt-get -y autoremove && rm -rf /var/lib/{cache,log}/ /var/cache/oracle-jdk7-installer /tmp/* /var/tmp/*
 
 # Setup Miniconda
 WORKDIR /usr/src
