@@ -68,10 +68,25 @@ J.J. Helmus, C.P. Jaroniec, Nmrglue: An open source Python package for the analy
 - Jonathan J. Helmus <jjhelmus@gmail.com>
 
 ## Container Contributors
-- Kristian Peters <kpeters@ipb-halle.de>, IPB-Halle
+- [Kristian Peters](https://github.com/korseby) (IPB-Halle)
 
 ## Website
 
-http://www.nmrglue.com
-http://github.com/jjhelmus/nmrglue
+* http://www.nmrglue.com
+* http://github.com/jjhelmus/nmrglue
 
+## Installation 
+
+For local individual installation:
+
+```bash
+docker pull docker-registry.phenomenal-h2020.eu/phnmnl/nmrglue
+```
+
+## Usage Instructions
+
+For direct docker usage:
+
+```bash
+docker run docker-registry.phenomenal-h2020.eu/phnmnl/nmrglue ...
+```
