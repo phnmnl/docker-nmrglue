@@ -60,10 +60,6 @@ When used in conjunction with the matplotlib (or other) python plotting library 
 
 Nmrglue can be used to analysis NMR data, with routines to perform peak picking, multidimensional lineshape fitting (peak fitting), and peak integration provided within the package. New analysis methods can be rapidly developed and tested in Python or by integrating Fortran and C/C++ code.
 
-## Publications
-
-J.J. Helmus, C.P. Jaroniec, Nmrglue: An open source Python package for the analysis of multidimensional NMR data, J. Biomol. NMR 2013, 55, 355-367. doi:10.1007/s10858-013-9718-x
-
 ## Tool Authors 
 - Jonathan J. Helmus <jjhelmus@gmail.com>
 
@@ -90,3 +86,7 @@ For direct docker usage:
 ```bash
 docker run docker-registry.phenomenal-h2020.eu/phnmnl/nmrglue ...
 ```
+
+## Publications
+
+- J.J. Helmus, C.P. Jaroniec, Nmrglue: An open source Python package for the analysis of multidimensional NMR data, J. Biomol. NMR 2013, 55, 355-367. doi:10.1007/s10858-013-9718-x
