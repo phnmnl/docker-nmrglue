@@ -31,8 +31,12 @@ Nmrglue can be used to analysis NMR data, with routines to perform peak picking,
 
 ## Website
 
-* http://www.nmrglue.com
-* http://github.com/jjhelmus/nmrglue
+- http://www.nmrglue.com
+- http://github.com/jjhelmus/nmrglue
+
+## Git Repository
+
+- https://github.com/phnmnl/container-nmrglue.git
 
 ## Installation 
 
