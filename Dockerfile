@@ -39,4 +39,5 @@ RUN mkdir /data
 WORKDIR /data
 
 # Dummy
-ENTRYPOINT [ "/bin/sh", "nosetests", "-v", "--with-cov", "--cov", "nmrglue", "--exe", "nmrglue" ]
+#ENTRYPOINT [ "/bin/sh", "nosetests", "-v", "--with-cov", "--cov", "nmrglue", "--exe", "nmrglue" ]
+
