@@ -1,5 +1,2 @@
-#test -f 
-#test -x 
-#which 
 which nosetests
 
