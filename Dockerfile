@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
-LABEL software=metfrag-cli
-LABEL software.version=0.6-dev
+LABEL software=nmrglue
+LABEL software.version=0.6
 LABEL version=0.1
 
 LABEL Description="nmrglue is a module for working with NMR data in Python."
