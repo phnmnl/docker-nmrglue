@@ -1,6 +1,7 @@
+![Logo](nmrglue_logo.jpg)
 # nmrglue
 
-![Logo](nmrglue_logo.jpg)
+Version: 0.6-dev
 
 ## Short description
 
@@ -28,6 +29,7 @@ Nmrglue can be used to analysis NMR data, with routines to perform peak picking,
 
 ## Container Contributors
 - [Kristian Peters](https://github.com/korseby) (IPB-Halle)
+- [Pabo Moreno](https://github.com/pcm32) (EMBL-EBI)
 
 ## Website
 
