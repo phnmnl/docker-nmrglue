@@ -1,4 +1,5 @@
 FROM ubuntu:16.04
+MAINTAINER PhenoMeNal-H2020 Project <phenomenal-h2020-users@googlegroups.com>
 
 LABEL software=nmrglue
 LABEL software.version=0.6
@@ -6,9 +7,7 @@ LABEL version=0.1
 
 LABEL Description="nmrglue is a module for working with NMR data in Python."
 
-MAINTAINER PhenoMeNal-H2020 Project <phenomenal-h2020-users@googlegroups.com>
-
-
+ENV NMRGLUE_REVISION ca8dc080666d1406f718ddb95186f248cb8b776f
 
 # Update, Install dependencies, Clean up
 RUN apt-get -y update && apt-get -y install python2.7 python-pip git wget && \
@@ -29,15 +28,8 @@ RUN pip install nose-cov
 RUN pip install python-coveralls
 
 # Install NMRglue
-WORKDIR /usr/src
-RUN git clone https://github.com/jjhelmus/nmrglue/
-WORKDIR /usr/src/nmrglue
-RUN python setup.py install
+RUN pip install -e git+https://github.com/jjhelmus/nmrglue.git@$NMRGLUE_REVISION#egg=nmrglue
 
 # Define data directory
 RUN mkdir /data
 WORKDIR /data
-
-# Dummy
-#ENTRYPOINT [ "/bin/sh", "nosetests", "-v", "--with-cov", "--cov", "nmrglue", "--exe", "nmrglue" ]
-
