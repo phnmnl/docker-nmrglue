@@ -37,10 +37,14 @@ uc = ng.fileiobase.unit_conversion(needed_data.size,'True',udic[0]['sw'],udic[0]
 ppm = uc.ppm_scale()
 np.savetxt("data_ppm.csv", ppm, delimiter=",")
 
-# Preallocation of dataset of processed spectra
+# Preallocation of fid info and dataset of processed spectra
 initial_data=np.zeros((len(bruker_folders),needed_data.size))
+fid_info=np.zeros((len(bruker_folders),9))
+
 for x in range(0, len(bruker_folders)):
     dic, initial_data[x,:] = ng.bruker.read_pdata(path+"nmr/"+bruker_folders[x]+'/10/pdata/1')
+    fid_info[x,:]=[dic['acqus']['TD'],dic['acqus']['BYTORDA'],dic['acqus']['DIGMOD'],dic['acqus']['DECIM'],dic['acqus']['DSPFVS'],dic['acqus']['SW_h'],dic['acqus']['SW'],dic['acqus']['O1'],1/(2*dic['acqus']['SW_h'])]
+
 
 # Create csv dataset
 csv_out = open("data_spectra.csv",'wb')
@@ -48,6 +52,15 @@ mywriter = csv.writer(csv_out)
 for row in initial_data:
     mywriter.writerow(row)
 csv_out.close()
+
+#Create fid info dataset
+csv_out = open("fid_info.csv",'wb')
+mywriter = csv.writer(csv_out)
+for row in fid_info:
+    mywriter.writerow(row)
+csv_out.close()
+
+
 
 
 
