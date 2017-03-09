@@ -26,7 +26,7 @@ def main(argv):
         zip_ref.close()
         for file in os.listdir(path):
             if file.endswith(".zip"):
-                zip_ref = zipfile.ZipFile(path+file, 'r')
+                zip_ref = zipfile.ZipFile(path+'/'+file, 'r')
                 zip_ref.extractall(path+"/nmr")
                 zip_ref.close()
 
@@ -64,7 +64,7 @@ def main(argv):
         for row in fid_info:
             mywriter.writerow(row)
         csv_out.close()
-    except getopt.GetoptError:
+   except getopt.GetoptError:
           print 'Error'
           sys.exit(2)
 
