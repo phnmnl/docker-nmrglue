@@ -1,5 +1,5 @@
 #!/usr/bin/env python2
-# Script for reading RAW Bruker NMR spectra with nmrglue
+# Script for reading Bruker-processed NMR spectra with nmrglue
 # Created by Daniel Canueto
 
 import nmrglue as ng
@@ -9,21 +9,23 @@ import zipfile
 import csv
 import shutil
 
-# Input path where initial zip is located   
-pre_path= "/data/MTBLS1.zip"   
+#Input:
+ #path where initial zip is located   
+study= "/data/MTBLS1.zip"   
 
-# Path where the Bruker folders are located
-path="/data/MTBLS1/"
 
-# Extraction of Bruker folder from zip file
-zip_ref = zipfile.ZipFile(pre_path, 'r')
+path=study[:-4]+'/'
+
+#Extraction of Bruker folder from zip file
+zip_ref = zipfile.ZipFile(study, 'r')
 zip_ref.extractall(path)
 zip_ref.close()
 for file in os.listdir(path):
     if file.endswith(".zip"):
-        zip_ref = zipfile.ZipFile(path+file, 'r')
+        zip_ref = zipfile.ZipFile(path+'/'+file, 'r')
         zip_ref.extractall(path+"nmr")
         zip_ref.close()
+
 
 # Remove __MACOSX folder
 shutil.rmtree(path+"nmr"+"/__MACOSX")
