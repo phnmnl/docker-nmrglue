@@ -53,8 +53,8 @@ for row in initial_data:
     mywriter.writerow(row)
 csv_out.close()
 
-#Create fid info dataset
-csv_out = open("fid_info.csv",'wb')
+# Create fid info dataset
+csv_out = open("data_fid.csv",'wb')
 mywriter = csv.writer(csv_out)
 for row in fid_info:
     mywriter.writerow(row)
