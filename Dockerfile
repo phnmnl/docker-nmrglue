@@ -24,6 +24,9 @@ RUN python setup.py install
 RUN apt-get -y purge git python-pip gcc && apt-get -y install --no-install-recommends python
 RUN apt-get -y clean && apt-get -y autoremove && rm -rf /var/lib/{cache,log}/ /var/cache/oracle-jdk7-installer /tmp/* /var/tmp/*
 
+# Add scripts
+ADD galaxy/*.python /usr/local/bin
+
 # Define data directory
 RUN mkdir /data
 WORKDIR /data
