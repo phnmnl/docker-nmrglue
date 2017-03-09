@@ -16,7 +16,7 @@ import getopt
 def main(argv):
 
    try:
-        optlist, args = getopt.getopt(argv, '$')
+        optlist, args = getopt.getopt(argv, '')
 
         path="/data/"+args[0]
         
