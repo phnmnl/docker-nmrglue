@@ -1,6 +1,6 @@
 #!/bin/bash
 # Fetch MTBLS1 study
-apt-get -y install wget
+#apt-get -y install wget
 wget -O /data/MTBLS1.zip 'https://www.ebi.ac.uk/metabolights/MTBLS1/files/MTBLS1'
 
 # Fetch test data

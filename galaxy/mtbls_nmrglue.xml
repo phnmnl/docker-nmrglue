@@ -8,7 +8,8 @@
 -->
   <description>Import MTBLS and pre-process data with NMRglue.</description>
   <command><![CDATA[
-    mtbls_nmrglue.python $study $spectrafile $ppmfile $fidfile 2>&1
+    wget -O /data/$study.zip "https://www.ebi.ac.uk/metabolights/MTBLS1/files/$study";
+    mtbls_nmrglue.py $study $spectrafile $ppmfile $fidfile 2>&1
   ]]></command>
   <inputs>
     <param name="study" type="text" label="Study path at MetaboLights FTP Server" help="This should be obtained from the MetaboLights website." />
