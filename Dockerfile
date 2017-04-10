@@ -10,7 +10,7 @@ LABEL Description="nmrglue is a module for working with NMR data in Python."
 # Update, Install dependencies, NMRGlue
 RUN apt-get -y update && apt-get -y install --no-install-recommends wget python2.7 libpython2.7-dev python-pip git gcc
 RUN pip install --upgrade pip && pip install -U setuptools
-RUN pip install numpy scipy nose coverage nose-cov python-coveralls spyder lxml xmltodict generateDS
+RUN pip install numpy scipy nose coverage nose-cov pandas python-coveralls spyder zip lxml xmltodict generateDS
 
 # Install latest dev-version of nmrglue from github
 #ENV NMRGLUE_REVISION ca8dc080666d1406f718ddb95186f248cb8b776f
