@@ -1,4 +1,8 @@
 #!/bin/bash
+
+mkdir -p /data
+cd /data
+
 # Fetch MTBLS1 study
 #apt-get -y install wget
 wget -O /data/MTBLS1.zip 'https://www.ebi.ac.uk/metabolights/MTBLS1/files/MTBLS1'
@@ -9,6 +13,8 @@ wget 'https://raw.githubusercontent.com/phnmnl/container-nmrglue/develop/test_da
 wget 'https://raw.githubusercontent.com/phnmnl/container-nmrglue/develop/test_data_fid.csv.gz'
 
 # Run test
+wget -O /data/runTest2.python 'https://raw.githubusercontent.com/phnmnl/container-nmrglue/develop/runTest2.python'
+chmod 755 /data/runTest2.python
 /data/runTest2.python
 
 # Compare results
