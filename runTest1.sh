@@ -25,10 +25,4 @@ else
 	echo "Test succeeded successfully."
 fi
 
-if [[ "$(cat data_fid.csv | head -n 1)" != "$(zcat test_data_fid.csv.gz | head -n 1)" ]]; then
-	echo "Test failed! Results do not match test data."
-	exit 1
-else
-	echo "Test succeeded successfully."
-fi
 
