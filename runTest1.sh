@@ -20,7 +20,6 @@ chmod 755 /data/runTest2.python
 # Compare results
 if [[ "$(cat data_spectra.csv | head -n 1)" != "$(zcat test_data_spectra.csv.gz | head -n 1)" ]]; then
 	echo "Test failed! Results do not match test data."
-	exit 1
 else
 	echo "Test succeeded successfully."
 fi
